@@ -11,7 +11,9 @@ const CardBusca = (props) =>{
                     data={props.data.materiais}
                     keyExtractor={(item) => `${item.id}`}
                     renderItem={({item}) => (
-                        <Text>{item.nome}</Text> 
+                        <Text>
+                            {item.nome}
+                        </Text> 
                     )}
                     />              
             </View>

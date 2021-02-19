@@ -1,8 +1,10 @@
 import React from 'react';
-import { View,StyleSheet, Text, Image,FlatList } from 'react-native';
+import { View,StyleSheet, Text, Image,FlatList,TextInput } from 'react-native';
 import CardBusca from '../components/cardBusca';
 
+
 const Busca = (props) => {
+    
     const dados = [
         {
           id: Math.random(), 
@@ -46,8 +48,11 @@ const Busca = (props) => {
     return (
         <View style={styles.container}>
             <Image  style={styles.logo} source={require('../img/logo_principal.png')}/>
-    
-                <FlatList 
+ 
+                <Text style={styles.label}>Buscar</Text>
+                <TextInput style={styles.input} placeholder="buscar" />
+                    
+                 <FlatList 
                     data={dados}
                     keyExtractor={(item) => `${item.id}`}
                     renderItem={({item}) => (
@@ -69,32 +74,29 @@ const styles = StyleSheet.create({
         backgroundColor: "#f1f5c0",
         textAlign:'center',
     },
-    paragrafo:{
-        textAlign:'center',
-        color:'green',
-    },
     logo: {
         width: 160,
         height: 100,
         marginTop:60,
     },
-    titulo:{
+    label: {
         fontSize:20,
-        color: 'green',
+        color:'#c3c634',
         fontWeight:'bold',
+        textAlign:'left'
     },
-    instagram:{
-        fontWeight:'bold',
+    input:{
         color: 'green',
-        fontSize:25,
-        textAlign:'center',
-        borderWidth:3,
-        borderStyle:'dashed',
-        borderColor:'green',
-        marginTop:5,
+        height:50,
+        backgroundColor:'#e2e482',
+        width:'90%',
+        padding:4,
     },
     content:{
         backgroundColor:'#e4ec7b',
         padding: 20,
-    }
+    },
+      map: {
+        flex: 1
+      }
 })
