@@ -1,17 +1,20 @@
 import React from 'react';
 import { Text, View, FlatList, StyleSheet} from "react-native";
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const CardBusca = (props) =>{
     return (
             <View style={styles.cardbusca}>
                 <Text>Nome: {props.data.nome}</Text>                
+                <Text>Sou um {props.data.categoria}</Text>                
                 <Text>Endereco: {props.data.endereco}</Text>  
-                <Text>Materiais aceitos: </Text>  
+                <Text>Materiais disponíveis/aceitos: </Text>  
                 <FlatList 
                     data={props.data.materiais}
                     keyExtractor={(item) => `${item.id}`}
                     renderItem={({item}) => (
                         <Text>
+                            <MaterialCommunityIcons name="circle" color={item.cor} size={15} />    
                             {item.nome}
                         </Text> 
                     )}

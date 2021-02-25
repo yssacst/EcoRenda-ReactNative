@@ -11,7 +11,7 @@ const Home = (props) => {
         },
         {
             id: 2,
-            image: require('../img/catadores.png'),
+            image: require('../img/catadores2.png'),
         }
 
     ]
@@ -44,6 +44,7 @@ const Home = (props) => {
                         <FlatList
                             data={catadores}
                             style={{ flex: 1 }}
+                            keyExtractor={(item, index) => item.id.toString()}
                             renderItem={({ item }) => {
                                 return <Slide data={item} />;
                             }}

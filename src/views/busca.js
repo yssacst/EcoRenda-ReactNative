@@ -9,40 +9,39 @@ const Busca = (props) => {
         {
           id: Math.random(), 
           nome: "Gustavo",
-          endereco: "gustavo@gmail.com",
-          materiais: [{
-              nome: "Alumínio",
-              nome: "Vidro",
-              nome: "Papel",
-          }]
+          categoria: "Estabelecimento",
+          endereco: "Rua violeta, 21 - Jd. Alvorada",
+          materiais: [
+              {id:1, nome: "Alumínio", cor:'yellow'},
+              {id:2, nome: "Vidro", cor:'green'},
+              {id:3, nome: "Papel", cor:'blue'}
+          ]
         },
         {
             id: Math.random(), 
             nome: "Rayssa",
-            endereco: "rayssa@gmail.com",
+            categoria: "Doador",
+                        endereco: "Av Ministro Lafaiete, 210 - Marco II",
             materiais:[
-                {
-                    nome: "Alumínio",
-                    nome: "Vidro",
-                    nome: "Papel",
-                    nome: "Plástico",
-                }]
+                {id:1, nome: "Papel", cor:'blue'}
+            ]
           }, {
             id: Math.random(), 
             nome: "Thalis",
-            endereco: "thalis@gmail.com",
-            materiais:[{
-                nome: "Vidro",
-                nome: "Papel",
-            } ]
+            categoria: "Estabelecimento",
+            endereco: "Estrada das Cambucas, 23 - Jd Nova Era",
+            materiais:[
+                {id:1, nome: "Vidro", cor:'green'},
+                {id:2, nome: "Papel", cor:'blue'}
+             ]
           }, {
             id: Math.random(), 
             nome: "Lucas",
-            endereco: "lucas@gmail.com",
-            materiais: [{
-                nome: "Alumínio",
-                nome: "Papel",
-            }]
+            categoria: "Doador",
+            endereco: "Alcir Brasil, 98 - Jd Nova Era",
+            materiais: [
+                {id:1, nome: "Alumínio", cor:'yellow'},
+            ]
           },
       ]
     return (
@@ -50,7 +49,8 @@ const Busca = (props) => {
             <Image  style={styles.logo} source={require('../img/logo_principal.png')}/>
  
                 <Text style={styles.label}>Buscar</Text>
-                <TextInput style={styles.input} placeholder="buscar" />
+                <Text style={styles.sublabel}>Encontre Doadores e estabelecimentos facilmente</Text>
+                <TextInput style={styles.input} placeholder="Buscar" />
                     
                  <FlatList 
                     data={dados}
@@ -85,12 +85,18 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         textAlign:'left'
     },
+    sublabel: {
+        fontSize:12,
+        color:'#c3c634',
+        textAlign:'left'
+    },
     input:{
         color: 'green',
         height:50,
         backgroundColor:'#e2e482',
         width:'90%',
         padding:4,
+        borderRadius:5
     },
     content:{
         backgroundColor:'#e4ec7b',

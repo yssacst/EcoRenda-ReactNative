@@ -10,7 +10,7 @@ const tab = createBottomTabNavigator()
 
 const Tab = () => {
     return (
-        <tab.Navigator initialRouteName="Home" tabBaroptions={{
+        <tab.Navigator initialRouteName="Busca" tabBaroptions={{
             activeTintColor: 'white',
             inactiveTintColor: 'green',
             labelStyle: {fontSize: 30}
